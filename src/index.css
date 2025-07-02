@@ -4,3 +4,25 @@
 body {
   font-family: "Work Sans", sans-serif;
 }
+
+@layer components {
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .top-bar {
+    @apply flex justify-between items-center px-5 py-2 border-b border-gray-300;
+  }
+
+  .breadcrumb {
+    @apply flex items-center space-x-2 text-sm font-medium text-gray-400;
+  }
+
+  .search-box {
+    @apply outline-gray-400 bg-gray-100 p-2 rounded-md;
+  }
+
+  .notification-count {
+    @apply absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded-full flex items-center justify-center shadow-md border border-white;
+  }
+}
