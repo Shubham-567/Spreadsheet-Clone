@@ -10,8 +10,9 @@ body {
     @apply flex justify-between items-center;
   }
 
-  .top-bar {
-    @apply flex justify-between items-center px-5 py-2 border-b border-gray-300;
+  .top-bar,
+  .tool-bar {
+    @apply flex justify-between items-center px-5 py-1 border-b border-gray-300;
   }
 
   .breadcrumb {
@@ -19,7 +20,7 @@ body {
   }
 
   .search-box {
-    @apply outline-gray-400 bg-gray-100 p-2 rounded-md;
+    @apply outline-gray-400 bg-gray-100 p-2 rounded-md max-w-[200px];
   }
 
   .notification-count {

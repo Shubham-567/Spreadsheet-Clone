@@ -1,4 +1,8 @@
 import { useState } from "react";
+import PanelIcon from "./icons/panelIcon";
+import Search from "./icons/Search";
+import Bell from "./icons/Bell";
+import ThreeDots from "./icons/ThreeDots";
 
 function TopBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,10 +13,10 @@ function TopBar() {
   };
 
   return (
-    <header className='top-bar'>
+    <header className='top-bar py-2'>
       {/* left: panel icon + breadcrumb */}
       <div className='flex-between gap-2'>
-        <img src='/icons/panel-icon.svg' alt='panel icon' />
+        <PanelIcon />
         <Breadcrumb />
       </div>
 
@@ -20,11 +24,9 @@ function TopBar() {
       <div className='flex-between gap-4'>
         {/* search box */}
         <div className='relative'>
-          <img
-            src='/icons/search.svg'
-            alt='search'
-            className='absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none'
-          />
+          <div className='absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none'>
+            <Search />
+          </div>
 
           <input
             className='search-box pl-9'
@@ -44,7 +46,7 @@ function TopBar() {
           className='relative cursor-pointer'
           onClick={() => console.log("Notification icon clicked")}>
           <span className='notification-count px-1 py-0.2'>2</span>
-          <img src='/icons/bell.svg' alt='notification icon' />
+          <Bell />
         </div>
 
         {/* profile */}
@@ -80,7 +82,7 @@ function Breadcrumb() {
       <span className='cursor-pointer'>Folder 2</span>
       <span>&gt;</span>
       <span className='text-black'>Spreadsheet 3</span>
-      <img src='/icons/more.svg' alt='more' />
+      <ThreeDots />
     </nav>
   );
 }
