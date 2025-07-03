@@ -1,9 +1,11 @@
 import ArrowSplit from "../components/icons/ArrowSplit";
+import ArrowSync from "../components/icons/ArrowSync";
 import Briefcase from "../components/icons/Briefcase";
 import Calendar from "../components/icons/Calendar";
 import ChevronCircle from "../components/icons/ChevronCircle";
 import Emoji from "../components/icons/Emoji";
 import Globe from "../components/icons/Globe";
+import Link from "../components/icons/Link";
 import Person from "../components/icons/Person";
 import ThreeDots from "../components/icons/ThreeDots";
 
@@ -11,9 +13,11 @@ import ThreeDots from "../components/icons/ThreeDots";
 export const columnGroup = [
   { label: "", colSpan: 1 },
   {
-    label: "Overview",
+    label: "Q3 Financial Overview",
     colSpan: 4,
     bgColor: "bg-[#E2E2E2]",
+    prefix: <Link />,
+    suffix: <ArrowSync />,
   },
   {
     label: "",
@@ -40,7 +44,7 @@ export const columnGroup = [
     prefix: <ArrowSplit />,
     suffix: <ThreeDots />,
   },
-  { label: "+", colSpan: 1, bgColor: "#EEEEEE" },
+  { label: "+", colSpan: 1, bgColor: "bg-[#EEEEEE]" },
 ];
 
 export const columns = [
@@ -85,15 +89,16 @@ export const columns = [
 export const initialData = [
   [
     1,
-    "Launch social media campaign for pro...",
+    "Launch social media campaign for",
     "15-11-2024",
     "In-process",
     "Aisha Patel",
-    "www.aishapatel...",
+    "www.aishapatel.com",
     "Sophie Choudhury",
     "Medium",
     "20-11-2024",
     "6,200,000 ₹",
+    "",
   ],
   [
     2,
@@ -101,38 +106,33 @@ export const initialData = [
     "28-10-2024",
     "Need to start",
     "Irfan Khan",
-    "www.irfankhanp...",
+    "www.irfankhan.com",
     "Tejas Pandey",
     "High",
     "30-10-2024",
     "3,500,000 ₹",
+    "",
   ],
-  [3, "", "", "", "", "", "", "", "", ""],
-  [4, "", "", "", "", "", "", "", "", ""],
-  [5, "", "", "", "", "", "", "", "", ""],
-  [6, "", "", "", "", "", "", "", "", ""],
-  [7, "", "", "", "", "", "", "", "", ""],
-  [8, "", "", "", "", "", "", "", "", ""],
-  [9, "", "", "", "", "", "", "", "", ""],
-  [10, "", "", "", "", "", "", "", "", ""],
-  [11, "", "", "", "", "", "", "", "", ""],
-  [12, "", "", "", "", "", "", "", "", ""],
-  [13, "", "", "", "", "", "", "", "", ""],
-  [14, "", "", "", "", "", "", "", "", ""],
-  [15, "", "", "", "", "", "", "", "", ""],
-  [16, "", "", "", "", "", "", "", "", ""],
-  [17, "", "", "", "", "", "", "", "", ""],
-  [19, "", "", "", "", "", "", "", "", ""],
-  [19, "", "", "", "", "", "", "", "", ""],
-  [20, "", "", "", "", "", "", "", "", ""],
-  [21, "", "", "", "", "", "", "", "", ""],
-  [22, "", "", "", "", "", "", "", "", ""],
-  [23, "", "", "", "", "", "", "", "", ""],
-  [24, "", "", "", "", "", "", "", "", ""],
-  [25, "", "", "", "", "", "", "", "", ""],
-  [26, "", "", "", "", "", "", "", "", ""],
-  [27, "", "", "", "", "", "", "", "", ""],
-  [28, "", "", "", "", "", "", "", "", ""],
-  [29, "", "", "", "", "", "", "", "", ""],
-  [30, "", "", "", "", "", "", "", "", ""],
+
+  // Additional rows
+  ...Array.from({ length: 28 }, (_, i) => [
+    i + 3,
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ]),
 ];
+
+
+export const priorityStyles = {
+  Low: "text-center text-xs text-blue-500 font-medium",
+  Medium: "text-center text-xs text-yellow-700 font-medium",
+  High: "text-center text-xs text-red-600 font-medium",
+};
