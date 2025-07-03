@@ -24,6 +24,43 @@ body {
   }
 
   .notification-count {
-    @apply absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded-full flex items-center justify-center shadow-md border border-white;
+    @apply absolute -top-1 -right-1 bg-green-700 text-white text-xs rounded-full flex items-center justify-center shadow-md border border-white px-1;
+  }
+
+  .tool-bar-control {
+    @apply gap-1 px-2 py-2 rounded-md cursor-pointer hover:bg-gray-100;
+  }
+
+  .action-button {
+    @apply flex gap-3 px-4 py-[7px] border-none ring-1 ring-gray-200 rounded-md cursor-pointer text-sm text-gray-600 hover:bg-gray-50;
+  }
+
+  /* table */
+  .column-group {
+    @apply px-3 py-1.5 border border-gray-200 text-left text-sm font-medium text-gray-700;
+  }
+
+  .column-group > span {
+    @apply flex gap-1 justify-center items-center;
+  }
+
+  .column {
+    @apply px-2 py-1 border border-gray-300 text-left text-xs font-medium text-gray-700;
+  }
+
+  .column > span {
+    @apply flex justify-between items-center w-full gap-1;
+  }
+
+  .column > span > span {
+    @apply flex items-center gap-1;
+  }
+
+  .input-column {
+    @apply w-full truncate text-xs bg-transparent outline-none border border-gray-200 m-0 px-2 py-2 focus:border focus:border-green-700 focus:shadow-[0_0_8px_2px_rgba(21,128,61,0.15)];
+  }
+
+  .row-cell {
+    @apply px-2 py-2 block border border-gray-200 text-xs;
   }
 }

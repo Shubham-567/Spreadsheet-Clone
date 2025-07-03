@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PanelIcon from "./icons/panelIcon";
+import PanelIcon from "./icons/PanelIcon";
 import Search from "./icons/Search";
 import Bell from "./icons/Bell";
 import ThreeDots from "./icons/ThreeDots";
@@ -45,7 +45,7 @@ function TopBar() {
         <div
           className='relative cursor-pointer'
           onClick={() => console.log("Notification icon clicked")}>
-          <span className='notification-count px-1 py-0.2'>2</span>
+          <span className='notification-count'>2</span>
           <Bell />
         </div>
 
