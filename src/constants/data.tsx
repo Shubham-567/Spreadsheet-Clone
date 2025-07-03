@@ -89,7 +89,7 @@ export const columns = [
 export const initialData = [
   [
     1,
-    "Launch social media campaign for",
+    "Launch social media campaign for something",
     "15-11-2024",
     "In-process",
     "Aisha Patel",
@@ -102,7 +102,7 @@ export const initialData = [
   ],
   [
     2,
-    "Update press kit for company redesign",
+    "Update press kit for company redesign and",
     "28-10-2024",
     "Need to start",
     "Irfan Khan",

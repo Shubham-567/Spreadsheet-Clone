@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { columnGroup, priorityStyles } from "../constants/data";
 import Dropdown from "./icons/Dropdown";
 
@@ -32,6 +33,38 @@ function Spreadsheet({ columns, data, setData }: SpreadsheetProps) {
           : row
       )
     );
+  };
+
+  const inputRefs = useRef<(HTMLInputElement | null)[][]>(
+    Array.from({ length: data.length }, () =>
+      Array.from({ length: columns.length }, () => null)
+    )
+  );
+
+  const handleArrowNavigation = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+    row: number,
+    col: number
+  ) => {
+    if (e.key === "ArrowUp" && row > 0) {
+      e.preventDefault();
+      inputRefs.current[row - 1][col]?.focus();
+    }
+
+    if (e.key === "ArrowDown" && row < data.length - 1) {
+      e.preventDefault();
+      inputRefs.current[row + 1][col]?.focus();
+    }
+
+    if (e.key === "ArrowLeft" && col > 1) {
+      e.preventDefault();
+      inputRefs.current[row][col - 1]?.focus();
+    }
+
+    if (e.key === "ArrowRight" && col < columns.length - 1) {
+      e.preventDefault();
+      inputRefs.current[row][col + 1]?.focus();
+    }
   };
 
   return (
@@ -70,8 +103,8 @@ function Spreadsheet({ columns, data, setData }: SpreadsheetProps) {
               <th
                 key={i}
                 className={`column ${bgColor || "bg-[#eeeeee]"} ${
-                  i === 1 ? "min-w-[250px]" : ""
-                } ${i === columns.length - 1 ? "min-w-[100px]" : ""}`}>
+                  i === 1 ? "min-w-[250px]" : i !== 0 && "min-w-[100px]"
+                }`}>
                 <span>
                   <span className='opacity-60'>{icon}</span>
                   {label}
@@ -96,6 +129,12 @@ function Spreadsheet({ columns, data, setData }: SpreadsheetProps) {
                     <span className='row-index-cell'>{cell}</span>
                   ) : (
                     <input
+                      ref={(el) => {
+                        if (!inputRefs.current[rowIndex]) {
+                          inputRefs.current[rowIndex] = [];
+                        }
+                        inputRefs.current[rowIndex][colIndex] = el;
+                      }}
                       className={`input-column ${
                         colIndex === urlColIndex && "underline"
                       } ${colIndex === dateColIndex && "text-end"} ${
@@ -108,6 +147,9 @@ function Spreadsheet({ columns, data, setData }: SpreadsheetProps) {
                       value={cell}
                       onChange={(e) =>
                         handleCellChange(rowIndex, colIndex, e.target.value)
+                      }
+                      onKeyDown={(e) =>
+                        handleArrowNavigation(e, rowIndex, colIndex)
                       }
                     />
                   )}

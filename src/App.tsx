@@ -7,13 +7,12 @@ import { columns as initialColumns, initialData } from "./constants/data";
 import AddColumnModal from "./components/AddColumnModal";
 function App() {
   const [columns, setColumns] = useState(initialColumns);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState(initialData);
 
   const handleAddColumn = (name: string) => {
     setColumns([...columns, { label: name, bgColor: "bg-[#eeeeee]" }]);
-
-    setData(data.map((row) => [...row, ""])); // Empty cell for each row
+    setData(data.map((row) => [...row, ""])); // empty cell for each row
   };
 
   return (

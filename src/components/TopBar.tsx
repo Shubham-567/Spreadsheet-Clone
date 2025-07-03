@@ -42,17 +42,17 @@ function TopBar() {
         </div>
 
         {/* notification */}
-        <div
+        <button
           className='relative cursor-pointer'
-          onClick={() => console.log("Notification icon clicked")}>
+          onClick={() => alert("Notification icon clicked")}>
           <span className='notification-count'>2</span>
           <Bell />
-        </div>
+        </button>
 
         {/* profile */}
         <div
           className='flex items-center gap-2 cursor-pointer'
-          onClick={() => console.log("Profile icon clicked")}>
+          onClick={() => alert("Profile icon clicked")}>
           <img
             src='/profile.png'
             alt='profile'
