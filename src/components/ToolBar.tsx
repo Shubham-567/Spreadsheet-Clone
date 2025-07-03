@@ -10,7 +10,7 @@ import Filter from "./icons/Filter";
 import SeparatorPipe from "./icons/SeparatorPipe";
 import Share from "./icons/Share";
 
-function ToolBar() {
+function ToolBar({ onPrimaryClick }: { onPrimaryClick?: () => void }) {
   return (
     <div className='tool-bar'>
       {/* left: toolbar */}
@@ -56,6 +56,11 @@ function ToolBar() {
             label={label}
             icon={icon}
             isPrimary={isPrimary}
+            onClick={
+              isPrimary
+                ? onPrimaryClick
+                : () => alert("Button Clicked: " + label)
+            }
           />
         ))}
       </div>
@@ -69,19 +74,19 @@ function ActionButton({
   label,
   icon,
   isPrimary = false,
+  onClick,
 }: {
   label: String;
   icon: ReactElement;
   isPrimary?: boolean;
+  onClick?: () => void;
 }) {
   return (
     <button
       className={`action-button ${
         isPrimary && "bg-green-800 hover:bg-green-900 text-white"
       }`}
-      onClick={() => {
-        alert("Button Clicked: " + label);
-      }}>
+      onClick={onClick}>
       <span className='size-3'>{icon}</span>
       {label}
     </button>

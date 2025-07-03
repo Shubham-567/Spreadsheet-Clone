@@ -1,14 +1,18 @@
-import { useState } from "react";
-import {
-  columnGroup,
-  columns,
-  initialData,
-  priorityStyles,
-} from "../constants/data";
+import { columnGroup, priorityStyles } from "../constants/data";
 import Dropdown from "./icons/Dropdown";
 
-function Spreadsheet() {
-  const [data, setData] = useState(initialData);
+type SpreadsheetProps = {
+  columns: {
+    label: string;
+    icon?: React.ReactNode;
+    dropdown?: boolean;
+    bgColor?: string;
+  }[];
+  data: (string | number)[][];
+  setData: React.Dispatch<React.SetStateAction<(string | number)[][]>>;
+};
+
+function Spreadsheet({ columns, data, setData }: SpreadsheetProps) {
   const dateColIndex = 2;
   const urlColIndex = 5;
   const priorityColIndex = 7;
@@ -31,7 +35,7 @@ function Spreadsheet() {
   };
 
   return (
-    <div className='overflow-x-aut mb-10'>
+    <div className='overflow-x-auto mb-10'>
       <table className='min-w-full'>
         <thead>
           {/* column group */}
@@ -65,7 +69,7 @@ function Spreadsheet() {
             {columns.map(({ label, icon, bgColor, dropdown }, i) => (
               <th
                 key={i}
-                className={`column ${bgColor || ""} ${
+                className={`column ${bgColor || "bg-[#eeeeee]"} ${
                   i === 1 ? "min-w-[250px]" : ""
                 } ${i === columns.length - 1 ? "min-w-[100px]" : ""}`}>
                 <span>

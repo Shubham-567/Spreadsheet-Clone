@@ -83,7 +83,7 @@ export const columns = [
   { label: "Priority", bgColor: "bg-[#EAE3FC]" },
   { label: "Due Date", bgColor: "bg-[#EAE3FC]" },
   { label: "Est. Value", bgColor: "bg-[#FFE9E0]" },
-  { label: "" },
+  { label: "", bgColor: "bg-white" },
 ];
 
 export const initialData = [
