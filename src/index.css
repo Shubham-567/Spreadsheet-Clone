@@ -66,4 +66,13 @@ body {
   .row-index-cell {
     @apply px-2 py-2 block border border-gray-200 text-xs text-center text-gray-600;
   }
+
+  /* Tabs */
+  .tab-container {
+    @apply fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 flex;
+  }
+
+  .tab-container button {
+    @apply px-4 py-1.5 text-sm transition-colors border-t-3 border-transparent text-gray-500 hover:text-green-700 cursor-pointer;
+  }
 }

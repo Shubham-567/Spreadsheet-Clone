@@ -31,7 +31,7 @@ function Spreadsheet() {
   };
 
   return (
-    <div className='overflow-x-auto'>
+    <div className='overflow-x-aut mb-10'>
       <table className='min-w-full'>
         <thead>
           {/* column group */}

@@ -15,8 +15,13 @@ function ToolBar() {
     <div className='tool-bar'>
       {/* left: toolbar */}
       <div className='flex-between text-sm py-0.5'>
-        Tool bar
-        <ChevronDouble />
+        <button
+          onClick={() => alert("Button clicked: Tool Bar")}
+          className='flex gap-2 cursor-pointer'>
+          Tool bar
+          <ChevronDouble />
+        </button>
+
         <span className='mx-4'>
           <SeparatorPipe />
         </span>
@@ -28,9 +33,12 @@ function ToolBar() {
             { label: "Filter", icon: <Filter /> },
             { label: "Call view", icon: <ArrowAutofit /> },
           ].map(({ label, icon }) => (
-            <div key={label} className='flex-between tool-bar-control'>
+            <button
+              key={label}
+              className='flex-between tool-bar-control'
+              onClick={() => alert("Button Clicked: " + label)}>
               {icon} {label}
-            </div>
+            </button>
           ))}
         </div>
       </div>

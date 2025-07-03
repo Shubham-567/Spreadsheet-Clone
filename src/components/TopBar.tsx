@@ -77,11 +77,17 @@ export default TopBar;
 function Breadcrumb() {
   return (
     <nav className='breadcrumb'>
-      <span className='cursor-pointer'>workspace</span>
+      <a href='' className='cursor-pointer'>
+        workspace
+      </a>
       <span>&gt;</span>
-      <span className='cursor-pointer'>Folder 2</span>
+      <a href='' className='cursor-pointer'>
+        Folder 2
+      </a>
       <span>&gt;</span>
-      <span className='text-black'>Spreadsheet 3</span>
+      <a href='' className='text-black'>
+        Spreadsheet 3
+      </a>
       <ThreeDots />
     </nav>
   );

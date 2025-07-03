@@ -130,9 +130,10 @@ export const initialData = [
   ]),
 ];
 
-
 export const priorityStyles = {
   Low: "text-center text-xs text-blue-500 font-medium",
   Medium: "text-center text-xs text-yellow-700 font-medium",
   High: "text-center text-xs text-red-600 font-medium",
 };
+
+export const initialTabs = ["All Orders", "Pending", "Reviewed", "Arrived"];
