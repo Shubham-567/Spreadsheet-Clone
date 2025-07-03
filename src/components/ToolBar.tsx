@@ -76,7 +76,7 @@ function ActionButton({
   isPrimary = false,
   onClick,
 }: {
-  label: String;
+  label: string;
   icon: ReactElement;
   isPrimary?: boolean;
   onClick?: () => void;
